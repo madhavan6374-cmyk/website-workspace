@@ -1,1 +1,136 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SolutAIn Works</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #F7F1E7;
+      color: #101B35;
+    }
+
+    header {
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+    }
+
+    .logo { font-size: 22px; font-weight: bold; }
+    .logo span { color: #1769F5; }
+
+    .hero {
+      padding: 90px 7%;
+      background: #101B35;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 6vw, 60px);
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      line-height: 1.7;
+      color: #D5DDED;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 8px;
+      background: #28A9FF;
+      color: #101B35;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .services { padding: 55px 7%; }
+
+    .services h2 { text-align: center; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid #E1D9CA;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .card h3 { margin-top: 0; }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      background: #101B35;
+      color: white;
+    }
+
+    @media (max-width: 700px) {
+      header { padding: 18px 5%; }
+      .hero { padding: 65px 6%; }
+      .services { padding: 40px 5%; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Solut<span>AI</span>n Works</div>
+    <a href="#services">Our Services</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Smart Solutions.<br>Better Business.</h1>
+      <p>We help businesses work smarter through AI automation, professional websites, creative design and digital productivity solutions.</p>
+      <a class="button" href="#services">Explore Our Services</a>
+    </section>
+
+    <section class="services" id="services">
+      <h2>How We Can Help</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>AI & Automation</h3>
+          <p>Simplify repetitive tasks and improve productivity.</p>
+        </article>
+        <article class="card">
+          <h3>Websites & Apps</h3>
+          <p>Create a professional digital presence for your business.</p>
+        </article>
+        <article class="card">
+          <h3>Creative Design</h3>
+          <p>Build consistent, polished visual communications.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>SolutAIn Works — The Right Place for Smarter Solutions</p>
+    <small>© <span id="year"></span> SolutAIn Works</small>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
+
