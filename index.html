@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#F7F1E7">
-<meta name="description" content="SolutAIn Works — AI-powered digital solutions, websites and automation.">
-<title>SolutAIn Works — Think Better. Build Smarter.</title>
+<meta name="theme-color" content="#101B35">
+<meta name="description" content="SolutAIn Works — AI-powered digital solutions, websites and business automation.">
+<title>SolutAIn Works | Digital Innovation Studio</title>
 
 <style>
 :root {
@@ -15,340 +15,333 @@
   --cyan: #28A9FF;
   --cream: #F7F1E7;
   --coral: #FF6356;
-  --white: #fff;
-  --muted: #687286;
-  --line: #E4DED4;
+  --bg: #F7F1E7;
+  --surface: #FFFFFF;
+  --text: #101B35;
+  --muted: #69748A;
+  --border: #E5DED3;
+  --shadow: 0 12px 35px rgba(16,27,53,.07);
 }
+
+body.dark {
+  --bg: #0C1427;
+  --surface: #14213B;
+  --text: #F7F1E7;
+  --muted: #B2BDD0;
+  --border: #293650;
+  --shadow: 0 12px 35px rgba(0,0,0,.15);
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: var(--navy);
-  background: var(--cream);
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  transition: background .25s, color .25s;
 }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
-.container { width: min(1160px, 90%); margin: auto; }
+.container { width: min(1140px, 90%); margin: auto; }
 
 header {
   position: sticky;
   top: 0;
-  z-index: 10;
-  background: rgba(247,241,231,.94);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 .nav {
-  min-height: 76px;
+  min-height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
-.brand {
-  font-size: 1.35rem;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-.brand .ai { color: var(--blue); }
-.nav-right { display: flex; align-items: center; gap: 26px; }
-.nav-links { display: flex; gap: 24px; align-items: center; }
-.nav-links a { font-size: .9rem; font-weight: 600; }
+.logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -.7px; }
+.logo .ai { color: var(--blue); }
+body.dark .logo .ai { color: var(--cyan); }
+
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { font-size: .88rem; font-weight: 700; }
 .nav-links a:hover { color: var(--blue); }
-.menu-button {
-  display: none;
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 8px 12px;
-  color: var(--navy);
+
+.icon-button, .menu-button {
+  min-width: 42px;
+  min-height: 42px;
+  padding: 8px 11px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 9px;
   cursor: pointer;
 }
+.menu-button { display: none; }
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
-  padding: 13px 19px;
-  border-radius: 7px;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 12px 18px;
   font-size: .9rem;
   font-weight: 700;
-  transition: transform .2s, background .2s;
   cursor: pointer;
-  border: 1px solid transparent;
+  transition: transform .2s, background .2s;
 }
 .button:hover { transform: translateY(-2px); }
-.primary { background: var(--blue); color: var(--white); }
-.primary:hover { background: #0D53CE; }
-.outline { border-color: #D1C9BD; background: transparent; }
-.outline:hover { background: var(--white); }
+.primary { background: var(--blue); color: white; }
+.primary:hover { background: #0E54CE; }
+.secondary { border-color: var(--border); background: var(--surface); }
 
-.hero { padding: 100px 0 80px; }
+.hero { padding: 85px 0 75px; overflow: hidden; }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr .85fr;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
   gap: 60px;
-  align-items: center;
 }
-.kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
+.eyebrow {
+  color: var(--blue);
   font-size: .76rem;
-  text-transform: uppercase;
-  letter-spacing: 1.7px;
   font-weight: 800;
-  color: var(--blue);
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
 }
-.kicker:before {
-  content: "";
-  width: 25px;
-  height: 2px;
-  background: var(--coral);
-}
+body.dark .eyebrow { color: var(--cyan); }
 h1 {
-  font-size: clamp(3rem, 6vw, 5.6rem);
-  line-height: .99;
-  letter-spacing: -4px;
-  margin: 24px 0;
-  max-width: 750px;
+  font-size: clamp(3rem, 6vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -3.5px;
+  margin: 22px 0;
 }
-h1 .highlight {
-  color: var(--blue);
-  position: relative;
-}
-.hero-copy {
-  color: var(--muted);
-  max-width: 520px;
-  font-size: 1.05rem;
-}
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-.hero-note { margin-top: 25px; color: var(--muted); font-size: .82rem; }
+h1 span { color: var(--blue); }
+body.dark h1 span { color: var(--cyan); }
+.hero-copy { color: var(--muted); max-width: 520px; font-size: 1.03rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.hero-meta { margin-top: 26px; color: var(--muted); font-size: .8rem; }
 
-.visual {
+.art {
+  min-height: 350px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, #DCE9FF, #F8E4D7);
+  padding: 25px;
   position: relative;
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
 }
-.visual-glow {
-  position: absolute;
-  width: 320px;
-  height: 320px;
-  background: #D9E8FF;
-  border-radius: 50%;
-  filter: blur(2px);
-}
-.visual-panel {
-  position: relative;
-  z-index: 1;
+body.dark .art { background: linear-gradient(140deg, #1B3967, #3D293B); }
+.art-main {
   width: 100%;
-  max-width: 390px;
-  background: var(--navy);
+  max-width: 350px;
+  background: #101B35;
   color: white;
-  padding: 27px;
-  border-radius: 18px;
-  transform: rotate(2deg);
-  box-shadow: 0 25px 65px rgba(16,27,53,.17);
-  animation: float 5s ease-in-out infinite;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 25px 55px rgba(16,27,53,.25);
+  transform: rotate(-2deg);
 }
-@keyframes float {
-  0%,100% { transform: translateY(0) rotate(2deg); }
-  50% { transform: translateY(-9px) rotate(1deg); }
-}
-.panel-top { display: flex; justify-content: space-between; align-items: center; }
-.panel-label { font-size: .72rem; color: #B9C4D8; letter-spacing: 1px; }
-.status { font-size: .7rem; color: #8EE4C0; }
-.visual-panel h2 { font-size: 1.7rem; margin: 30px 0 8px; line-height: 1.2; }
-.visual-panel > p { color: #B9C4D8; font-size: .86rem; }
-.panel-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 25px; }
-.stat {
-  border: 1px solid #34415A;
-  border-radius: 10px;
-  padding: 15px;
-}
-.stat strong { display: block; color: var(--cyan); font-size: 1.45rem; }
-.stat span { color: #B9C4D8; font-size: .75rem; }
-.panel-bar { height: 5px; border-radius: 5px; background: #34415A; margin-top: 20px; overflow: hidden; }
-.panel-bar span { display: block; width: 78%; height: 100%; background: var(--cyan); }
+.art-label { color: #B9C4D8; font-size: .72rem; letter-spacing: 1px; }
+.art-main h2 { font-size: 1.75rem; line-height: 1.2; margin: 20px 0 8px; }
+.art-main p { color: #B9C4D8; font-size: .84rem; }
+.art-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+.art-stat { border: 1px solid #34415A; border-radius: 9px; padding: 12px; }
+.art-stat strong { display: block; font-size: 1.35rem; color: #28A9FF; }
+.art-stat span { font-size: .73rem; color: #B9C4D8; }
 
-.trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.trust-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  padding: 25px 0;
-}
-.trust-label { color: var(--muted); font-size: .8rem; }
-.trust-item { font-size: .86rem; font-weight: 800; }
-
-section.content-section { padding: 95px 0; }
-.section-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 30px;
-  margin-bottom: 35px;
-}
-.section-top h2 {
-  max-width: 560px;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  line-height: 1.08;
-  letter-spacing: -1.5px;
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
   margin-top: 15px;
 }
-.section-top p { max-width: 370px; color: var(--muted); }
+.metric {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 19px;
+  border-radius: 12px;
+}
+.metric strong { display: block; font-size: 1.3rem; }
+.metric span { font-size: .78rem; color: var(--muted); }
 
-.cards {
+.section { padding: 78px 0; }
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 32px;
+}
+.section-head h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -1.4px;
+  line-height: 1.13;
+  margin-top: 10px;
+}
+.section-head p { max-width: 390px; color: var(--muted); }
+
+.services {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 17px;
 }
-.card {
-  background: rgba(255,255,255,.72);
-  border: 1px solid var(--line);
-  border-radius: 13px;
-  padding: 27px;
-  min-height: 245px;
-  transition: border-color .2s, transform .2s, box-shadow .2s;
+.service {
+  padding: 25px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform .2s, border-color .2s;
 }
-.card:hover {
-  border-color: #A8C7FF;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(16,27,53,.06);
-}
-.card-icon {
+.service:hover { transform: translateY(-4px); border-color: var(--blue); }
+.service-icon {
   width: 45px;
   height: 45px;
-  border-radius: 10px;
+  border-radius: 11px;
   display: grid;
   place-items: center;
-  background: #E1ECFF;
   color: var(--blue);
-  font-size: 1.1rem;
+  background: #E5EEFF;
   font-weight: 900;
 }
-.card:nth-child(2) .card-icon { background: #FFE5E0; color: #D74B40; }
-.card:nth-child(3) .card-icon { background: #DDF5EB; color: #187B59; }
-.card h3 { font-size: 1.15rem; margin: 22px 0 9px; }
-.card p { color: var(--muted); font-size: .91rem; }
-.card-link { display: inline-block; margin-top: 18px; color: var(--blue); font-weight: 800; font-size: .85rem; }
+.service:nth-child(2) .service-icon { color: #CB493F; background: #FFE5E0; }
+.service:nth-child(3) .service-icon { color: #167955; background: #DDF5E9; }
+.service h3 { margin: 19px 0 8px; font-size: 1.12rem; }
+.service p { color: var(--muted); font-size: .9rem; }
 
-.process { background: var(--navy); color: white; }
-.process .section-top p { color: #B9C4D8; }
-.process .kicker { color: var(--cyan); }
-.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
-.step { border-top: 1px solid #34415A; padding-top: 22px; }
-.step-num { color: var(--cyan); font-size: .8rem; font-weight: 800; }
-.step h3 { margin: 15px 0 8px; font-size: 1.2rem; }
-.step p { color: #B9C4D8; font-size: .9rem; }
-
-.contact-box {
-  background: var(--blue);
-  color: white;
-  border-radius: 18px;
-  padding: 55px;
+.projects-section { background: var(--surface); }
+.filters { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 25px; }
+.filter {
+  padding: 9px 15px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: .82rem;
+  font-weight: 700;
+}
+.filter.active { background: var(--blue); color: white; border-color: var(--blue); }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.project {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--bg);
+}
+.project-visual {
+  min-height: 150px;
+  padding: 22px;
   display: flex;
-  justify-content: space-between;
+  align-items: end;
+  color: white;
+  background: linear-gradient(135deg, #101B35, #1769F5);
+}
+.project:nth-child(2) .project-visual { background: linear-gradient(135deg, #163D3A, #28A9FF); }
+.project:nth-child(3) .project-visual { background: linear-gradient(135deg, #3C254F, #FF6356); }
+.project:nth-child(4) .project-visual { background: linear-gradient(135deg, #173C61, #28A9FF); }
+.project:nth-child(5) .project-visual { background: linear-gradient(135deg, #5A3523, #FFB46B); }
+.project:nth-child(6) .project-visual { background: linear-gradient(135deg, #26304B, #7785AD); }
+.project-visual span { font-size: 1.45rem; font-weight: 900; }
+.project-info { padding: 20px; }
+.project-info small { color: var(--blue); font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+.project-info h3 { margin: 6px 0; font-size: 1.08rem; }
+.project-info p { color: var(--muted); font-size: .87rem; }
+.project[hidden] { display: none; }
+
+.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.process-item { border-top: 1px solid var(--border); padding-top: 20px; }
+.process-item strong { color: var(--blue); font-size: .8rem; }
+.process-item h3 { margin: 12px 0 7px; }
+.process-item p { color: var(--muted); font-size: .9rem; }
+
+.contact { padding: 20px 0 80px; }
+.contact-panel {
+  border-radius: 18px;
+  padding: 50px;
+  background: var(--navy);
+  color: white;
+  display: flex;
   align-items: center;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 25px;
 }
-.contact-box h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; max-width: 600px; }
-.contact-box p { margin-top: 13px; color: #DCE8FF; }
-.contact-box .button { background: white; color: var(--navy); flex-shrink: 0; }
+.contact-panel h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; max-width: 650px; }
+.contact-panel p { color: #B9C4D8; margin-top: 12px; }
+.contact-panel .button { background: var(--cyan); color: var(--navy); flex-shrink: 0; }
 
-footer { padding: 28px 0; }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; flex-wrap: wrap; }
-.footer-copy { color: var(--muted); font-size: .8rem; }
-.footer-links { display: flex; gap: 18px; font-size: .82rem; font-weight: 700; }
-
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s, transform .6s; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *:before, *:after {
-    scroll-behavior: auto !important;
-    animation: none !important;
-    transition: none !important;
-  }
-  .reveal { opacity: 1; transform: none; }
-}
+footer { border-top: 1px solid var(--border); padding: 25px 0; }
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; align-items: center; }
+.footer-note { color: var(--muted); font-size: .8rem; }
 
 @media (max-width: 850px) {
-  .hero { padding-top: 70px; }
   .hero-grid { grid-template-columns: 1fr; gap: 30px; }
-  .visual { min-height: 360px; }
-  .visual-panel { max-width: 430px; }
-  .section-top { display: block; }
-  .section-top p { margin-top: 18px; }
-  .cards { grid-template-columns: 1fr 1fr; }
-  .contact-box { padding: 38px; }
+  .art { min-height: 320px; }
+  .services, .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .section-head { display: block; }
+  .section-head p { margin-top: 15px; }
+  .contact-panel { padding: 35px; }
 }
-
 @media (max-width: 600px) {
   .nav { min-height: 68px; }
   .menu-button { display: inline-block; }
-  .nav-right { position: relative; }
   .nav-links {
     display: none;
     position: absolute;
-    top: 48px;
-    right: 0;
-    width: 220px;
+    top: 68px;
+    left: 5%;
+    right: 5%;
     padding: 12px;
-    background: white;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(16,27,53,.12);
-    align-items: stretch;
     flex-direction: column;
+    align-items: stretch;
     gap: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 12px; border-radius: 7px; }
-  .nav-links a:hover { background: var(--cream); }
-  .nav-right > .button { display: none; }
-  h1 { font-size: clamp(2.8rem, 13vw, 4.2rem); letter-spacing: -2px; }
-  .hero { padding: 65px 0 45px; }
-  .hero-copy { font-size: .98rem; }
-  .visual { min-height: 340px; }
-  .visual-glow { width: 260px; height: 260px; }
-  .visual-panel { padding: 22px; }
-  .trust-inner { justify-content: flex-start; gap: 15px 24px; }
-  .trust-label { width: 100%; }
-  section.content-section { padding: 65px 0; }
-  .cards, .steps { grid-template-columns: 1fr; }
-  .card { min-height: auto; }
-  .steps { gap: 25px; }
-  .contact-box { padding: 30px 23px; align-items: flex-start; flex-direction: column; }
+  .nav-links a { padding: 12px; }
+  .nav-right > .nav-cta { display: none; }
+  h1 { letter-spacing: -2px; font-size: clamp(2.8rem, 12vw, 4rem); }
+  .hero { padding: 60px 0 45px; }
+  .metrics { gap: 8px; }
+  .metric { padding: 12px; }
+  .metric strong { font-size: 1.05rem; }
+  .metric span { font-size: .7rem; }
+  .section { padding: 60px 0; }
+  .services, .project-grid, .process-grid { grid-template-columns: 1fr; }
+  .contact-panel { align-items: flex-start; flex-direction: column; padding: 30px 23px; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
-
-@media (max-width: 360px) {
-  .container { width: 92%; }
-  .brand { font-size: 1.15rem; }
-  .hero-actions .button { width: 100%; }
-  .panel-stats { gap: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
 </style>
 </head>
 
 <body>
 <header>
-  <nav class="container nav">
-    <a class="brand" href="#home">Solut<span class="ai">AI</span>n Works</a>
+  <nav class="container nav" aria-label="Main navigation">
+    <a href="#home" class="logo">Solut<span class="ai">AI</span>n Works</a>
+
     <div class="nav-right">
       <div class="nav-links" id="navLinks">
         <a href="#services">Services</a>
-        <a href="#process">Our Approach</a>
+        <a href="#projects">Projects</a>
+        <a href="#process">Process</a>
         <a href="#contact">Contact</a>
       </div>
-      <a class="button primary" href="#contact">Start a Project <span>↗</span></a>
-      <button class="menu-button" id="menuButton" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">Menu</button>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+      <a class="button primary nav-cta" href="#contact">Start a Project ↗</a>
+      <button class="menu-button" id="menuToggle" type="button" aria-expanded="false" aria-controls="navLinks">Menu</button>
     </div>
   </nav>
 </header>
@@ -356,130 +349,181 @@ footer { padding: 28px 0; }
 <main>
   <section class="hero" id="home">
     <div class="container hero-grid">
-      <div class="reveal">
-        <div class="kicker">The smarter way forward</div>
-        <h1>Think better.<br>Build <span class="highlight">smarter.</span></h1>
+      <div>
+        <div class="eyebrow">AI-Powered Digital Solutions</div>
+        <h1>Make your next idea <span>work smarter.</span></h1>
         <p class="hero-copy">
-          We turn everyday business challenges into practical digital
-          solutions — from professional websites to AI-powered automation.
+          We help businesses move forward with modern websites,
+          intelligent automation and practical digital tools.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#services">Explore Solutions <span>↗</span></a>
-          <a class="button outline" href="#process">How We Work</a>
+          <a class="button primary" href="#projects">Explore Our Work ↗</a>
+          <a class="button secondary" href="#services">Discover Services</a>
         </div>
-        <p class="hero-note">Clear thinking. Useful technology. Solutions that work.</p>
+        <p class="hero-meta">The Right Place for Smarter Solutions.</p>
       </div>
 
-      <div class="visual reveal" aria-label="Illustration of a digital solutions dashboard">
-        <div class="visual-glow"></div>
-        <div class="visual-panel">
-          <div class="panel-top">
-            <span class="panel-label">YOUR DIGITAL WORKSPACE</span>
-            <span class="status">● Ready to grow</span>
+      <div>
+        <div class="art">
+          <div class="art-main">
+            <div class="art-label">THE SOLUTAIN APPROACH</div>
+            <h2>Less repetitive work.<br>More possibilities.</h2>
+            <p>Technology designed around your goals.</p>
+            <div class="art-row">
+              <div class="art-stat"><strong>01</strong><span>Understand</span></div>
+              <div class="art-stat"><strong>02</strong><span>Design</span></div>
+              <div class="art-stat"><strong>03</strong><span>Develop</span></div>
+              <div class="art-stat"><strong>04</strong><span>Improve</span></div>
+            </div>
           </div>
-          <h2>Make work<br>work smarter.</h2>
-          <p>Better systems start with the right solution.</p>
-          <div class="panel-stats">
-            <div class="stat"><strong>01</strong><span>Understand</span></div>
-            <div class="stat"><strong>02</strong><span>Simplify</span></div>
-            <div class="stat"><strong>03</strong><span>Automate</span></div>
-            <div class="stat"><strong>04</strong><span>Improve</span></div>
-          </div>
-          <div class="panel-bar"><span></span></div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><strong>Web</strong><span>Digital presence</span></div>
+          <div class="metric"><strong>AI</strong><span>Smart workflows</span></div>
+          <div class="metric"><strong>Tools</strong><span>Business solutions</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="trust">
-    <div class="container trust-inner">
-      <span class="trust-label">DIGITAL SOLUTIONS FOR EVERYDAY BUSINESS</span>
-      <span class="trust-item">Web Design</span>
-      <span class="trust-item">AI & Automation</span>
-      <span class="trust-item">Business Tools</span>
-      <span class="trust-item">Digital Growth</span>
-    </div>
-  </div>
-
-  <section class="content-section" id="services">
+  <section class="section" id="services">
     <div class="container">
-      <div class="section-top reveal">
+      <div class="section-head">
         <div>
-          <div class="kicker">What we can do</div>
-          <h2>Good ideas deserve better solutions.</h2>
+          <div class="eyebrow">Our capabilities</div>
+          <h2>Solutions built for real work.</h2>
         </div>
-        <p>
-          Technology should make your work easier, not more complicated.
-          We focus on useful, practical outcomes.
-        </p>
+        <p>We focus on clarity, usability and useful results instead of unnecessary complexity.</p>
       </div>
 
-      <div class="cards">
-        <article class="card reveal">
-          <div class="card-icon">W</div>
+      <div class="services">
+        <article class="service">
+          <div class="service-icon">W</div>
           <h3>Website Development</h3>
-          <p>Modern, mobile-friendly websites that communicate your value and give your business a professional online presence.</p>
-          <a class="card-link" href="#contact">Discuss a website ↗</a>
+          <p>Responsive websites that help businesses present their services and connect with customers.</p>
         </article>
-
-        <article class="card reveal">
-          <div class="card-icon">AI</div>
-          <h3>AI & Workflow Automation</h3>
-          <p>Reduce repetitive tasks and improve everyday processes with practical automation and AI-assisted workflows.</p>
-          <a class="card-link" href="#contact">Improve a process ↗</a>
+        <article class="service">
+          <div class="service-icon">AI</div>
+          <h3>AI & Automation</h3>
+          <p>Practical workflows to reduce repetitive work and make everyday tasks more efficient.</p>
         </article>
-
-        <article class="card reveal">
-          <div class="card-icon">D</div>
+        <article class="service">
+          <div class="service-icon">D</div>
           <h3>Digital Business Tools</h3>
-          <p>Custom dashboards, reporting tools and digital systems designed around your business requirements.</p>
-          <a class="card-link" href="#contact">Build a solution ↗</a>
+          <p>Custom dashboards, reporting interfaces and tools tailored to business requirements.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="content-section process" id="process">
+  <section class="section projects-section" id="projects">
     <div class="container">
-      <div class="section-top reveal">
+      <div class="section-head">
         <div>
-          <div class="kicker">Our approach</div>
-          <h2>Simple process.<br>Thoughtful execution.</h2>
+          <div class="eyebrow">Selected concepts</div>
+          <h2>Explore our solution ideas.</h2>
         </div>
-        <p>
-          Every project starts by understanding the problem and finding
-          the most appropriate way to solve it.
-        </p>
+        <p>These sample concepts demonstrate the kinds of digital experiences we can create.</p>
       </div>
 
-      <div class="steps">
-        <article class="step reveal">
-          <div class="step-num">STEP 01</div>
+      <div class="filters" role="group" aria-label="Filter project concepts">
+        <button class="filter active" type="button" data-filter="all" aria-pressed="true">All Concepts</button>
+        <button class="filter" type="button" data-filter="web" aria-pressed="false">Websites</button>
+        <button class="filter" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+        <button class="filter" type="button" data-filter="tools" aria-pressed="false">Business Tools</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+        <article class="project" data-category="web">
+          <div class="project-visual"><span>01 / WEB</span></div>
+          <div class="project-info">
+            <small>Website concept</small>
+            <h3>Business Website</h3>
+            <p>A polished online presence for a growing business.</p>
+          </div>
+        </article>
+        <article class="project" data-category="automation">
+          <div class="project-visual"><span>02 / AI</span></div>
+          <div class="project-info">
+            <small>Automation concept</small>
+            <h3>Workflow Assistant</h3>
+            <p>A concept for simplifying repetitive office processes.</p>
+          </div>
+        </article>
+        <article class="project" data-category="tools">
+          <div class="project-visual"><span>03 / DATA</span></div>
+          <div class="project-info">
+            <small>Business tool concept</small>
+            <h3>Performance Dashboard</h3>
+            <p>A simple interface for monitoring useful business metrics.</p>
+          </div>
+        </article>
+        <article class="project" data-category="web">
+          <div class="project-visual"><span>04 / BRAND</span></div>
+          <div class="project-info">
+            <small>Brand concept</small>
+            <h3>Creative Portfolio</h3>
+            <p>A professional way to showcase services and previous work.</p>
+          </div>
+        </article>
+        <article class="project" data-category="automation">
+          <div class="project-visual"><span>05 / FLOW</span></div>
+          <div class="project-info">
+            <small>Workflow concept</small>
+            <h3>Task Automation</h3>
+            <p>A conceptual flow for reducing manual administrative tasks.</p>
+          </div>
+        </article>
+        <article class="project" data-category="tools">
+          <div class="project-visual"><span>06 / SYSTEM</span></div>
+          <div class="project-info">
+            <small>Digital system concept</small>
+            <h3>Business Workspace</h3>
+            <p>A unified interface for organizing everyday operations.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">How we work</div>
+          <h2>From problem to practical solution.</h2>
+        </div>
+        <p>A clear approach helps keep projects focused on their purpose and requirements.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-item">
+          <strong>STEP 01</strong>
           <h3>Understand</h3>
-          <p>Identify the challenge, goals and practical requirements before choosing a solution.</p>
+          <p>Define the problem, audience and expected outcome.</p>
         </article>
-        <article class="step reveal">
-          <div class="step-num">STEP 02</div>
+        <article class="process-item">
+          <strong>STEP 02</strong>
           <h3>Create</h3>
-          <p>Design and develop a solution with usability, clarity and mobile responsiveness in mind.</p>
+          <p>Build a solution with responsive design and usability in mind.</p>
         </article>
-        <article class="step reveal">
-          <div class="step-num">STEP 03</div>
-          <h3>Improve</h3>
-          <p>Test the result, fix issues and refine the experience based on real requirements.</p>
+        <article class="process-item">
+          <strong>STEP 03</strong>
+          <h3>Refine</h3>
+          <p>Test functionality, resolve issues and improve the experience.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="content-section" id="contact">
+  <section class="contact" id="contact">
     <div class="container">
-      <div class="contact-box reveal">
+      <div class="contact-panel">
         <div>
-          <h2>Let's turn your next idea into something useful.</h2>
-          <p>Tell us what you want to improve, simplify or build.</p>
+          <h2>Your next idea starts with a conversation.</h2>
+          <p>Let's explore a practical digital solution for your business.</p>
         </div>
-        <a class="button" href="mailto:hello@example.com">Let's Talk <span>↗</span></a>
+        <a class="button" href="mailto:hello@example.com">Contact Us ↗</a>
       </div>
     </div>
   </section>
@@ -487,55 +531,55 @@ footer { padding: 28px 0; }
 
 <footer>
   <div class="container footer-inner">
-    <a class="brand" href="#home">Solut<span class="ai">AI</span>n Works</a>
-    <p class="footer-copy">The Right Place for Smarter Solutions.</p>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#process">Approach</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <p class="footer-copy">© <span id="year"></span> SolutAIn Works</p>
+    <a href="#home" class="logo">Solut<span class="ai">AI</span>n Works</a>
+    <p class="footer-note">The Right Place for Smarter Solutions.</p>
+    <p class="footer-note">© <span id="year"></span> SolutAIn Works</p>
   </div>
 </footer>
 
 <script>
-const menuButton = document.getElementById("menuButton");
+const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
+const themeToggle = document.getElementById("themeToggle");
 
-menuButton.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", String(isOpen));
-  menuButton.textContent = isOpen ? "Close" : "Menu";
+menuToggle.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.textContent = open ? "Close" : "Menu";
 });
 
 navLinks.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
-    menuButton.textContent = "Menu";
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.textContent = "Menu";
+  });
+});
+
+themeToggle.addEventListener("click", () => {
+  const dark = document.body.classList.toggle("dark");
+  themeToggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  themeToggle.title = dark ? "Switch to light theme" : "Switch to dark theme";
+  document.querySelector('meta[name="theme-color"]').content = dark ? "#0C1427" : "#F7F1E7";
+});
+
+document.querySelectorAll(".filter").forEach(button => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+
+    document.querySelectorAll(".filter").forEach(item => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+
+    document.querySelectorAll(".project").forEach(project => {
+      project.hidden = filter !== "all" && project.dataset.category !== filter;
+    });
   });
 });
 
 document.getElementById("year").textContent = new Date().getFullYear();
-
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll(".reveal").forEach(element => {
-    observer.observe(element);
-  });
-} else {
-  document.querySelectorAll(".reveal").forEach(element => {
-    element.classList.add("visible");
-  });
-}
 </script>
 </body>
 </html>
